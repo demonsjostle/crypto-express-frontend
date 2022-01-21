@@ -7,9 +7,11 @@ import {
 } from 'react-router-dom';
 import {GlobalStyles} from "../Assets/GlobalStyles";
 import HomaPage1 from "../Pages/HomePage1";
-import Game from "../Pages/Game";
+import GameDemo from "../Pages/Game/GameDemo";
 import Roadmap from "../Pages/Roadmap";
 import WhitePaper from "../Pages/WhitePaper";
+import Game from "../Pages/Game";
+import Game1 from "../Pages/Game1";
 const App = () => {
 
 	return (
@@ -19,9 +21,11 @@ const App = () => {
 		<Router>
 			<Routes>
 				<Route path="/" element={<HomaPage1 />}/>
-				<Route path="/game" element={<Game />}/>
+				<Route path="/game_demo" element={<GameDemo />}/>
 				<Route path="/roadmap" element={<Roadmap />} />
 				<Route path="/whitepaper" element={<WhitePaper />} />
+				<Route path="/game" element={<Game />} />
+				<Route path="/game1" element={<Game1 />} />
 			</Routes>
 		</Router>
 		</>
