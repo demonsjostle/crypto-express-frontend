@@ -1,41 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { Navbar } from "../../Config";  
-import { FirstContainer, 
-         HomeBody, 
-         PlayButton,
-         SecondContainer
-} 
-from "./HomeElements";
+import { Body, Navbar, Sidebar } from "../../Config";
+import { HomeBody } from "./HomeElements";
 
 
 
 const index = (props) => {
-    const [scrollNav, setScrollNav] = useState(false);
-    const changeNav = () => {
-        if(window.scrollY >= 80) {
-            setScrollNav(true);
-        } else {
-            setScrollNav(false);
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', changeNav);
-    }, [])
-
+    const [authenticated, setAuthenticated] = useState(false);
 
     return (
-        <>  
-            <Navbar scrollNav={scrollNav}/>
-            <HomeBody>
-                <FirstContainer scrollNav={scrollNav}>
-                    <PlayButton>Play</PlayButton>
-                </FirstContainer>
+        <>
+            {authenticated ?
+                <>
+                    <Navbar />
+                    <Sidebar />
+                    <Body>
+                        body
+                    </Body>
+                </>
 
-                <SecondContainer>
 
-                </SecondContainer>
-            </HomeBody>
+                :
+                <>
+                    <Navbar />
+                    <HomeBody>
+                        homepage
+                    </HomeBody>
+                </>
+            }
+
+
         </>
     )
 }

@@ -12,6 +12,8 @@ import Roadmap from "../Pages/Roadmap";
 import WhitePaper from "../Pages/WhitePaper";
 import Game from "../Pages/Game";
 import Game1 from "../Pages/Game1";
+import User from "../Pages/User";
+import Map from "../Pages/Map";
 const App = () => {
 
 	return (
@@ -26,6 +28,8 @@ const App = () => {
 				<Route path="/whitepaper" element={<WhitePaper />} />
 				<Route path="/game" element={<Game />} />
 				<Route path="/game1" element={<Game1 />} />
+				<Route path="/user" element={<User />} />
+				<Route path="/map" element={<Map />} />
 			</Routes>
 		</Router>
 		</>

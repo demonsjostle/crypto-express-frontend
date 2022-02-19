@@ -1,73 +1,93 @@
 import styled from "styled-components";
+import { NavLink as Link } from 'react-router-dom';
+import { device } from "../../Assets/GlobalStyles";
+
+
+
+    
 
 export const Navbar = styled.nav`
-    border-bottom: ${({scrollNav}) => (scrollNav ? null : null)}; ;
+    width: 100vw;
     height: var(--nav-size);
-    display: flex;
-    justify-content: center;
-    background-color: ${({scrollNav}) => (scrollNav ? 'rgba(93, 206, 178, 0.5)' : 'transparent' )};
-    backdrop-filter: ${({scrollNav}) => (scrollNav ? 'blur(10px)' : null)};
-    position: ${({scrollNav}) => (scrollNav ? 'fixed' : 'relative')};
-    width: 100%;
-    
-`;
-
-
-export const Nav = styled.ul`
-    width: 1500px;  
-    height: 100%;
+    background: #1e1e26;
     display: flex;
     justify-content: space-between;
-    list-style: none;
-    
-    
+    /* padding: 0.5rem calc((100vw - 1000px) / 2); */
+
 `;
 
 
-export const LogoContainer = styled.li`
-    
-    width: 150px;
+export const NavLink = styled(Link)`
+    color: #15cdfc;
     display: flex;
-    justify-content: center;
     align-items: center;
-    cursor: pointer;
-`;
-
-export const LogoText = styled.span``;
-
-export const NavItemContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-`;
-
-export const NavItem = styled.a`
-    color: #000;
     text-decoration: none;
-    margin-left: 15px;
+    padding: 0 0.5rem;
+    height: 100%;
     cursor: pointer;
-    
-`;
-
-export const LoginBtn = styled.div`
-    background-color: #18AEF4;
-    width: 70px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 28px; 
 
 `;
 
-export const RegisterBtn = styled.div`
-    background-color: #18AEF4;
-    width: 70px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 28px; 
 
+export const Bar = styled.div`
+    display: none;
+    @media ${device.mobileL} {
+        display: flex;
+        color: #fff;
+        align-items: center;
+        margin-right: 20px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+`;
+
+
+export const NavMenu = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    /* Second Nav */
+    /* margin-right: 24px; */
+    /* Third Nav */
+    /* width: 100vw;
+    white-space: nowrap; */
+    @media ${device.mobileL} {
+        display: none;
+    }
+
+`;
+
+
+export const NavBtn = styled.nav`
+    display: flex;
+    align-items: center;
+    /* Third Nav */
+    /* justify-content: flex-end;
+    width: 100vw; */
+    @media ${device.mobileL} {
+
+    }
+
+
+`;
+
+
+export const NavBtnLink = styled.div`
+
+    border-radius: 4px;
+    background: #256ce1;
+    padding: 10px 22px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    /* Second Nav */
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #fff;
+        color: #010606;
+    }
 `;

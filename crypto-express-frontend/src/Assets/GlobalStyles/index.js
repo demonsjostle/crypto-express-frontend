@@ -13,8 +13,9 @@ export const GlobalStyles = createGlobalStyle`
 	}
 	
 	:root {
-		--nav-size: 60px;
+		--nav-size: 5vh;
 		--nav-btn-size: calc(var(--nav-size) * 0.5);
+		--sidebar-size: 16vw;
 	}
 	
 	::-webkit-scrollbar{

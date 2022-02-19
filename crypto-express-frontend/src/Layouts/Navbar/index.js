@@ -1,37 +1,59 @@
-import React from "react";
-import {LogoContainer,
-        LogoText,
-        Nav, 
-        Navbar,
-        NavItem,
-        NavItemContainer,
-        LoginBtn,
-        RegisterBtn} 
-from "./NavbarElements";
+import React, {useState} from "react";
+import {
+    Bar, 
+    Navbar, 
+    NavBtn,
+    NavBtnLink,
+    NavLink,
+    NavMenu 
+} from "./NavbarElements"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import LoginModal from '../../Components/LoginModal.js';
 
 const index = (props) => {
+    const [showLogin, setShowLogin] = useState(false);
 
-    const Link = () => {
+    const openLoginModal = () => {
+        setShowLogin(true);
+    }
 
-    } 
+    const closeLoginModal = () => { 
+        setShowLogin(false);
+    }
+
+
+
     return (
         <>
-            <Navbar scrollNav={props.scrollNav}>
-                <Nav>
-                    <LogoContainer>
-                        <LogoText>CRYPTO EXPRESS</LogoText>
-                    </LogoContainer>
-                    <NavItemContainer>
-                        <NavItem href="/roadmap">Roadmap</NavItem>
-                        <NavItem href="/whitepaper">White paper</NavItem>
-                        <NavItem>Community</NavItem>
-                        <NavItem>Team</NavItem>
-                        <NavItem><RegisterBtn>Register</RegisterBtn></NavItem>
-                        <NavItem><LoginBtn>Login</LoginBtn></NavItem>
-                    </NavItemContainer> 
-                </Nav>
+            <Navbar>
+                <NavLink to='/'>
+                    CRYPTO EXPRESS
+                </NavLink>
+                <Bar><FontAwesomeIcon icon={faBars}/></Bar>
+                <NavMenu>
+                    <NavLink to='/about'>
+                        Roadmap
+                    </NavLink>
+                    <NavLink to='/services'>
+                        Whitepaper
+                    </NavLink>
+                    <NavLink to='/contact-us'>
+                        Community
+                    </NavLink>
+                    <NavLink to='/contact-us'>
+                        Teams
+                    </NavLink>
+
+                    <NavBtn>
+                        <NavBtnLink onClick={openLoginModal}>Login</NavBtnLink>
+                    </NavBtn>
+                </NavMenu>
+                <LoginModal show={showLogin} handleClose={closeLoginModal}/>
+
+                
             </Navbar>
-             
+            
         </>
 
     )
