@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Body, Navbar, Sidebar } from "../../Config";
-import { HomeBody } from "./HomeElements";
-
-
+import AuthenedHomePage from "./AuthenedHomePage";
+import UnauthenHomepage from "./UnauthenHomepage";
 
 const index = (props) => {
     const [authenticated, setAuthenticated] = useState(false);
@@ -11,24 +9,13 @@ const index = (props) => {
         <>
             {authenticated ?
                 <>
-                    <Navbar />
-                    <Sidebar />
-                    <Body>
-                        body
-                    </Body>
+                    <AuthenedHomePage/>
                 </>
-
-
                 :
                 <>
-                    <Navbar />
-                    <HomeBody>
-                        homepage
-                    </HomeBody>
+                    <UnauthenHomepage/>
                 </>
             }
-
-
         </>
     )
 }
