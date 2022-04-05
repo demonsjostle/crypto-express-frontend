@@ -5,11 +5,16 @@ import {
     NavBtn,
     NavBtnLink,
     NavLink,
+    NavLogo,
+    NavLogoText,
     NavMenu 
 } from "./NavbarElements"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import LoginModal from '../../Components/LoginModal.js';
+
+//Logo
+import CryptoLogo from "../../Assets/Logo/logo.jpg";
 
 const index = (props) => {
     const [showLogin, setShowLogin] = useState(false);
@@ -28,7 +33,9 @@ const index = (props) => {
         <>
             <Navbar>
                 <NavLink to='/'>
-                    CRYPTO EXPRESS
+                    <NavLogo src={CryptoLogo}/>
+                    <NavLogoText>CRYPTO EXPRESS</NavLogoText>
+                     
                 </NavLink>
                 <Bar><FontAwesomeIcon icon={faBars}/></Bar>
                 <NavMenu>

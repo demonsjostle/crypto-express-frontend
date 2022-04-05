@@ -21,7 +21,7 @@ const App = () => {
 		
 		<GlobalStyles />	
 		<Router>
-			<Routes>
+			<Routes>			
 				<Route path="/" element={<HomaPage1 />}/>
 				<Route path="/game_demo" element={<GameDemo />}/>
 				<Route path="/roadmap" element={<Roadmap />} />

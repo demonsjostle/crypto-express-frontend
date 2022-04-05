@@ -91,3 +91,15 @@ export const NavBtnLink = styled.div`
         color: #010606;
     }
 `;
+
+export const NavLogo = styled.img`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+`;
+
+export const NavLogoText = styled.span`
+    font-weight: 600;
+
+`;

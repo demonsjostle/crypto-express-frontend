@@ -27,6 +27,7 @@ module.exports = {
 			  use: ['file-loader?name=[name].[ext]']
 						  
 			},
+				
 
 		]
 
@@ -37,6 +38,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: "./public/index.html",
+			favicon: "./src/Assets/Logo/logo.jpg",
 		})
 
 	]
